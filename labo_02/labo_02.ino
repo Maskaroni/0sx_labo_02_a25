@@ -70,10 +70,10 @@ void displayPercentages(int click, unsigned int potentiometerValue) {
 }
 
 void whichLedIsOn(unsigned int potentiometerValue) {
-  analogWrite(ledPins[ledIndex], LOWEST);
+  digitalWrite(ledPins[ledIndex], LOWEST);
   ledIndex = map(potentiometerValue, LOWEST, maxValue, LOWEST, numberOfLeds);
   if (ledIndex == numberOfLeds) {
     ledIndex = (numberOfLeds - 1);         //Pour parier un problème au niveau de la répartition des index sur la valeur du potentiomètre
   }
-  analogWrite(ledPins[ledIndex], HIGHEST);
+  digitalWrite(ledPins[ledIndex], HIGHEST);
 }
